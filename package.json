@@ -1,0 +1,70 @@
+{
+  "name": "mise",
+  "displayName": "mise",
+  "description": "mise runner",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "publisher": "rgeraskin",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "mise",
+    "make",
+    "scripts",
+    "task",
+    "recipe",
+    "launch",
+    "version",
+    "development environment"
+  ],
+  "repository": {
+    "url": "https://github.com/rgeraskin/vscode-mise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rgeraskin/vscode-mise/issues"
+  },
+  "homepage": "https://github.com/rgeraskin/vscode-mise",
+  "icon": "images/favicon.ico",
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "mise.misePath": {
+          "type": "string",
+          "default": "/opt/homebrew/bin/mise",
+          "description": "Path to the mise executable"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "mise.tasks",
+        "title": "Mise Tasks"
+      },
+      {
+        "command": "mise.install",
+        "title": "Mise Install"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "eslint": "^9.13.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
